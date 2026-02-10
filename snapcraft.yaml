@@ -1,0 +1,28 @@
+name: cargo-audit
+base: core24
+version: "0.22.1"
+summary: Audit Cargo.lock for crates with security vulnerabilities.
+description: |
+  cargo-audit can scan a Cargo.lock file for known security vulnerabilities.
+  Or, it can scan a binary compiled with cargo-auditable to see if it was compiled
+  with known security vulnerabilities.
+
+  This snap is not endorsed by the Rust Secure Code Working Group.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+parts:
+  cargo-audit:
+    plugin: rust
+    source-type: git
+    source: https://github.com/rustsec/rustsec
+    source-tag: cargo-audit/v0.22.1
+    source-subdir: cargo-audit
+    # snap docs claim that default features are enabled by default
+    # but this does not seem to be the case
+    rust-features: ["binary-scanning"]
+
+apps:
+  cargo-audit:
+    command: bin/cargo-audit
