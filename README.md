@@ -12,4 +12,4 @@ I am fairly sure that this is not fixable, but I'd love to be proven wrong!
 `cargo-audit` is dual-licensed under the Apache license 2.0, or the MIT license.
 See its repository for more details.
 
-This repository is licensed under the [GNU General Purpose License, version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This repository is also dual-licensed under the Apache license 2.0, or the MIT license.
