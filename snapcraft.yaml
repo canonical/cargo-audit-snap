@@ -1,7 +1,8 @@
 name: cargo-audit
+title: cargo audit
 base: core24
-version: "0.22.1"
-summary: Audit Cargo.lock for crates with security vulnerabilities.
+version: "0.22.1~1"
+summary: Audit Cargo.lock and Rust binaries for crates with security vulnerabilities.
 description: |
   cargo-audit can scan a Cargo.lock file for known security vulnerabilities.
   Or, it can scan a binary compiled with cargo-auditable to see if it was compiled
@@ -9,8 +10,10 @@ description: |
 
   This snap is not endorsed by the Rust Secure Code Working Group.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable
+# It is reasonable you may want to `cargo-audit bin` files anywhere on your computer,
+# so you need classic confinement
+confinement: classic
 
 parts:
   cargo-audit:
