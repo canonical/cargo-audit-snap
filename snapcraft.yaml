@@ -1,7 +1,7 @@
 name: cargo-audit
 title: cargo audit
 base: core24
-version: "0.22.1~1"
+version: "0.22.1~2"
 summary: Audit Cargo.lock and Rust binaries for crates with security vulnerabilities.
 description: |
   cargo-audit can scan a Cargo.lock file for known security vulnerabilities.
